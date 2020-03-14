@@ -4,6 +4,10 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.io.Serializable;
 
 /**
@@ -26,12 +30,14 @@ import java.io.Serializable;
         * 用户名
         */
     @TableField("user_name")
+    @NotBlank(message = "用户名不能为空！")
     private String userName;
 
         /**
         * 密码
         */
     @TableField("password")
+    @NotBlank(message = "密码不能为空！")
     private String password;
 
         /**
@@ -44,12 +50,14 @@ import java.io.Serializable;
         * 电话号码
         */
     @TableField("phone")
+    @Pattern(regexp = "^1(3|4|5|7|8)\\d{9}$",message = "手机号码不正确!")
     private String phone;
 
         /**
         * 邮箱
         */
     @TableField("email")
+    @Email(message = "邮箱错误！")
     private String email;
 
     public String getId() {

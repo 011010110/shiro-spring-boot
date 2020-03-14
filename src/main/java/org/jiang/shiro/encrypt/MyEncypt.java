@@ -11,7 +11,6 @@ public class MyEncypt {
 
     public static String encrypt(String password,String salt){
         SimpleHash simpleHash = new SimpleHash("SHA",password,salt,2);
-        String encypt = simpleHash.toHex();
-        return encypt;
+        return simpleHash.toHex();
     }
 }

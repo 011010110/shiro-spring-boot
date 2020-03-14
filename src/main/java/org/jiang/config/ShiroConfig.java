@@ -99,6 +99,7 @@ public class ShiroConfig {
         chainDefinition.addPathDefinition("/img/**", "anon");
         chainDefinition.addPathDefinition("/layuiadmin/**", "anon");
         chainDefinition.addPathDefinition("/favicon.ico", "anon");
+        chainDefinition.addPathDefinition("/api/user/**", "anon");
         chainDefinition.addPathDefinition("/**", "user");//默认需要用户登录过才能访问
 
         return chainDefinition;
